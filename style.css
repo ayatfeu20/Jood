@@ -788,7 +788,8 @@ ul{
         margin-top: 20px;
         text-align: center;
         justify-content: center;
-        padding: 0 2rem;
+        margin-left: 22rem;
+        
         
         
     }
@@ -982,7 +983,8 @@ ul{
          .blu {
           background-color:#F8F8F8;
          }
-          .app-btn:hover {
+        
+         .app-btn:hover {
            background-color: #454545;
            color: #F8F8F8;
     
