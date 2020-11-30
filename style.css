@@ -9,6 +9,15 @@ html,body {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    
+}
+.container, .container-fluid, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    --bs-gutter-x: 1.5rem;
+    width: 100%;
+    padding-right: calc(var(--bs-gutter-x)/ 2);
+    padding-left: calc(var(--bs-gutter-x)/ 2);
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /*.navbar-top img{
@@ -50,19 +59,22 @@ z-index: -1;
 
 
 
- #background .container{
+ .background{
 
-    display: flex;
-    position: relative;
-    width: 100%;
-    height: 100%;
-    border: 0;
-    padding: 0 2rem;
-    margin: 0;
-    z-index: -1;
-    background-image: url(images/blue_background_crop.png);
+    display: block;
     
+    width: 100%;
+
+    border: 0;
+    padding: 0 ;
+    margin: 0;
+    
+    background-image: url(images/blue_background_crop.png);
+    background-size: 100%;
+    overflow: hidden;
+       
 }
+
 
 /*#child{
 position: relative;
@@ -78,26 +90,29 @@ bottom: 550px;
 
 }*/
 
-ul{
-    list-style-type:none;
-    overflow: hidden;
-}
+.navbar .container {
+    display: flex;
+    width: 100%;
+    background-color: transparent;
 
-a {
+    justify-content: space-between;
+    align-items: center;
+}
+ 
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
     color: #FFFFFF;
     text-decoration: none;
-    background-color: transparent;
-    top: 3rem;
-    font-size: xx-small;
+    
+    /*top: 3rem;*/
+    font-size: x-small;
     font-weight: bold;
-    justify-self: space-between;
-
-    margin-right:10px ;
     
 
 }
   
-a:hover {
+li:hover {
     color:#FFBB00;
     text-decoration: 1px solid underline #FFBB00;
 }
@@ -112,7 +127,9 @@ a .container {
     width: 100%;
     padding: 0 ;
     margin: 0 ;
-    justify-content: space-between;
+    
+    justify-content:center;
+    align-items: center;
     
     background-color: transparent;
     
@@ -126,27 +143,26 @@ a .container {
     padding: 0;
     
     
+    
 }
 
-.navbar .container {
-    display: fixed;
-    position: relative;
 
-    justify-content: space-between;
-    align-items: center;
+    
     /*background-color: #3096FE ;*/
     
     
     
-}
+
 
 
 .navbar-brand {
     display: inline-block;
     font-size: 1.5rem;
-    color: black;
-  /*  margin-right: 1rem; 
-    bottom: 10rem;*/
+    
+   align-items: center; 
+   /* bottom: 10rem;*/
+   padding-right: 6rem;
+   padding-left: 15rem;
     
     
 
@@ -171,6 +187,9 @@ a .container {
 .navbar-nav {
     display: flex;
     flex-direction: column;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
 }
 
 .nav-link {
@@ -178,7 +197,16 @@ a .container {
     text-decoration: none;
 }
 
-.bt{
+ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+    }
+
+.btn-app{
+    display: block;
     color: #FFFFFF;
     background-color:#FFBB00 ;
     width: 110px;
@@ -187,13 +215,20 @@ a .container {
     border: transparent;
     font-size: x-small;
     font-weight: bold;
+    cursor: pointer;
+    
+
+    margin-left: 4rem;
+    
+    
 }
-bt:hover{
+.btn-app:hover{
     color: #FFBB00;
     border: #FFFFFF;
-    background-color:#3096FE ;
+    background-color:transparent;
 
 }
+
 
 @media (min-width: 768px) {
     .nav-link {
@@ -221,7 +256,7 @@ bt:hover{
 
 @media (min-width: 992px) {
     .container {
-        max-width: 960px;
+           max-width: 960px;
     }
 }
 
@@ -239,14 +274,38 @@ bt:hover{
 }
 
 #home .container{
-    display: flex;
-    align-items: center;
-    align-self: center;
-    padding: 0;
+    display:block;
+    padding:  4rem;
     margin: 2;
   /*  background-color: #3096FE ;*/
   background-color: transparent;
+  width: 100%;
+  
+  height: 97vh;
+  justify-content: center;
+  align-items: center;
+  
+  
 }
+
+@media (min-width: 768px){
+    .carousel-slide{
+    display: none;
+    max-width: 720px;
+}
+}
+
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1330px;
+    }
+}
+
+/*.carousel-item2 img{
+    position: relative;
+    margin-left: 75%;   
+    
+}*/
 
 *{ 
     box-sizing: border-box;
@@ -263,7 +322,7 @@ bt:hover{
                 
                 justify-content: center;
                 padding: 0;
-                margin: 0;
+                margin: 1rem;
       }
       
       @-webkit-keyframes scroll {
@@ -382,26 +441,43 @@ bt:hover{
     display: grid;
     grid-template-columns: 1fr 1fr;
     
-    column-gap: 0.5rem;
-    padding-top: 0;
-    padding-bottom: 4rem;
+    column-gap: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 8rem;
+    width: 100%;
+    height: 100%;
     
 }
+
+/*#aboutus .container .imageanimate{
+    display: flex;
+    position: relative;
+}
+
 
 #aboutus .container img {
     position: relative;
     height: 500px;
-    margin-top: 10px;
+    margin-top: 10px;*/
     
-}
-.animated1 img{
-            
+    
+    
+
+ #aboutus .container .animated1  {
+
+    background-image: url(images/bg.svg);
+    background-size: 65%;
+    
+         
     background-repeat: no-repeat;
-    background-position: left top;
+    background-position: center;
     padding-top:0px;
+    
     margin-bottom:0px;
     -webkit-animation-duration: 10s;
     animation-duration: 10s;
+    animation-iteration-count: infinite;
+    
     -webkit-animation-fill-mode: both;
     animation-fill-mode: both;
  }
@@ -423,7 +499,7 @@ bt:hover{
     0% {
        transform-origin: center center;
        transform: rotate(-200deg);
-       opacity: 0;
+       opacity: 1;
     }
     100% {
        transform-origin: center center;
@@ -432,7 +508,7 @@ bt:hover{
     }
  }
  
- .rotateIn img{
+ .rotateIn  {
     -webkit-animation-name: rotateIn;
     animation-name: rotateIn;
  }
@@ -712,6 +788,9 @@ bt:hover{
         margin-top: 20px;
         text-align: center;
         justify-content: center;
+        padding: 0 2rem;
+        
+        
     }
     
      #screens .container p {
@@ -933,9 +1012,12 @@ bt:hover{
             }
 
             #contactform {
+                display: block;
                 background-color: #FFFFFF;
             
-                padding: 0 2rem;
+                
+                align-items: center;
+                justify-content: center;
                 
             }
          #contactform h3{
@@ -950,6 +1032,13 @@ bt:hover{
             
 
             }
+
+        #contactform form{
+            display: block;
+            justify-content: center;
+            align-items: center;
+            padding-left: 15rem;
+        }
             
 
         .form-control{
@@ -1004,10 +1093,22 @@ footer .container {
     margin-top: 0.5rem;
 }
 
-a {
+.footer-items a{
+    font-size: x-small;
+    font-weight: bold;
+    justify-content: space-between;
+    margin-right: 15px;
+    padding-top: 5rem;
+}
+
+ a {
     text-decoration: none;
     color: #FFFFFF;
     font-weight: 500;
+}
+.social-media{
+    display: block;
+    padding-top: 1rem;
 }
 .social-media a{
     background-color: #c5ddf575;
@@ -1019,8 +1120,7 @@ a {
   text-align: center;
   text-decoration: none;
   margin: 0;
-  
-        
+    
     
 }
 a:hover {
@@ -1028,17 +1128,6 @@ a:hover {
 
 }
 .social-media a:hover{
-    background-color: hsla(44, 100%, 50%, 0.212); ;
+    background-color: hsla(44, 100%, 50%, 0.212); 
 }
 
-
-
-
-
-
-            
-        
-
-
-
-    
