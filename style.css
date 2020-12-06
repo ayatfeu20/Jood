@@ -60,18 +60,15 @@ z-index: -1;
 
 
  .background{
-
-    display: block;
+      
+    background-image: url(images/header-bg.png);
+    background-size: auto;
     
-    width: 100%;
-
-    border: 0;
-    padding: 0 ;
-    margin: 0;
     
-    background-image: url(images/blue_background_crop.png);
-    background-size: 100%;
-    overflow: hidden;
+    background-repeat: no-repeat;
+  
+  background-position: 50% 100%;
+  height: 125vh;
        
 }
 
@@ -181,7 +178,7 @@ a .container {
 }
 
 .navbar-collapse {
-    align-items: center;
+    align-items: left;
 }
 
 .navbar-nav {
@@ -189,7 +186,7 @@ a .container {
     flex-direction: column;
     padding-left: 0;
     margin-bottom: 0;
-    list-style: none;
+    
 }
 
 .nav-link {
@@ -227,6 +224,12 @@ ul{
     border: #FFFFFF;
     background-color:transparent;
 
+}
+@media (max-width: 768px) {
+    .navbar-collapse {
+        display: flex;
+        
+    }
 }
 
 
@@ -288,18 +291,29 @@ ul{
   
 }
 
-@media (min-width: 768px){
-    .carousel-slide{
-    display: none;
-    max-width: 720px;
-}
-}
 
-@media (min-width: 1400px) {
+@media (max-width: 768px){
+ .carousel-inner{
+      width: 600px;
+      margin: 0;
+      padding: 0;
+     }
+     .carousel-item{
+         width: 10px;
+     }
+    
+    }
+    
+
+  /*  max-width: 720px;*/
+
+
+
+/*@media (min-width: 1400px) {
     .container {
         max-width: 1330px;
     }
-}
+}*/
 
 /*.carousel-item2 img{
     position: relative;
@@ -317,7 +331,7 @@ ul{
         background: #FFFFFF;
         display: -webkit-box;
         display: flex;
-        height: 30vh;
+        height: 10vh;
         -webkit-box-pack: center;
                 
                 justify-content: center;
@@ -466,6 +480,7 @@ ul{
  #aboutus .container .animated1  {
 
     background-image: url(images/bg.svg);
+    z-index: -1;
     background-size: 65%;
     
          
@@ -591,6 +606,15 @@ ul{
 
      }
 
+     @media (min-width: 768px){
+        #aboutus .container{
+             align-items: left;
+             justify-content: left;
+             padding: 0;
+             float: 5rem top;
+           
+           }
+        }
      *{box-sizing: border-box;
     }
     
@@ -769,6 +793,16 @@ ul{
      }
 
     
+     @media (max-width: 768px){
+        #features .container .content-box{
+             align-items: left;
+             justify-content: left;
+             padding-left: 0;
+             padding: 0;
+           
+           }
+        }
+
     #screens .container{
         width: 1500px;
         height: 700px;
@@ -917,6 +951,24 @@ ul{
         align-items: center;
     }
 
+    @media (max-width: 768px){
+        #statistics .container{
+             
+             text-align: left;
+             justify-content: left;
+             padding: 0;
+           }
+           th{
+               padding-right: 30px;
+               font-size: 0.9rem;
+            }
+            td{
+                padding-right: 30px;
+                font-size: 0.3;
+                align-items: left;
+            }
+        }
+
 
     #download .container {
         display: grid;
@@ -1013,6 +1065,29 @@ ul{
             bottom: 5rem;
             }
 
+            @media (max-width: 768px){
+                #download .container .content-box2{
+                     
+                     text-align: left;
+                     justify-content: left;
+                     padding-left: 0;
+                   }
+                   .flex{
+                       align-items: left;
+                       justify-content: left;
+                   }
+                }
+
+                @media (max-width: 768px){
+                    #download .container .rightimage img{
+                         left: 10rem;
+                         
+                       }
+                       
+                    }
+
+
+
             #contactform {
                 display: block;
                 background-color: #FFFFFF;
@@ -1050,7 +1125,14 @@ ul{
     
             
             
-        }/*
+        }
+        
+        @media (max-width: 768px){
+            #contactform form{
+                 padding-left: 0;
+               }
+            }
+            /*
         .mb-6, form-row{
             
             margin-top: 2rem;
@@ -1132,4 +1214,3 @@ a:hover {
 .social-media a:hover{
     background-color: hsla(44, 100%, 50%, 0.212); 
 }
-
